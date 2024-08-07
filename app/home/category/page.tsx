@@ -7,7 +7,7 @@ export default async function Page() {
   const shoes = await getShoesData();
 
   return (
-    <div className="container mx-auto p-6 flex flex-col gap-10">
+    <div className="container mx-auto flex flex-col gap-10">
       <section>
         <h2 className="text-2xl font-bold mb-4">Shoes</h2>
         <ProductCard products={shoes} />
