@@ -1,5 +1,6 @@
 import ProductPage from "@/app/ui/home/products/product-page";
 import { getProductById } from "@/app/lib/actions";
+import { notFound } from "next/navigation";
 import { Product } from "@/app/lib/definitions";
 
 interface ProductPageProps {
@@ -11,18 +12,13 @@ interface ProductPageProps {
 const Page = async ({ params }: ProductPageProps) => {
   const { productId } = params;
   console.log("Product ID:", productId);
+  const product: Product = await getProductById(productId);
 
-  try {
-    const product: Product = await getProductById(productId);
-    return <ProductPage product={product} />;
-  } catch (error) {
-    console.error("Error fetching product:", error);
-    return (
-      <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-4">Product not found</h1>
-      </div>
-    );
+  if (!productId) {
+    notFound();
   }
+
+  return <ProductPage product={product} />;
 };
 
 export default Page;
