@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Page() {
-  return <div>Category page</div>;
+  return <main>let's see if category home page's workin</main>;
 }
