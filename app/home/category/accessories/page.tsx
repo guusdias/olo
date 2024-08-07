@@ -1,8 +1,9 @@
 import ProductCard from "@/app/ui/home/products/product-card";
 import { getAccessoriesData } from "@/app/lib/actions";
+import { Product } from "@/app/lib/definitions";
 
 export default async function Page() {
-  const products = await getAccessoriesData();
+  const products: Product[] = await getAccessoriesData();
 
   return (
     <div>

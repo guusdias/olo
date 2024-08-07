@@ -17,7 +17,10 @@ export const getShirtsData = async (): Promise<Product[]> => {
             url
           }
           price
-          productId
+          productId 
+          title {
+          text
+        }
         }
       }
     }
@@ -42,6 +45,9 @@ export const getPantsData = async (): Promise<Product[]> => {
           }
           price
           productId
+          title {
+            text
+          }
         }
       }
     }
@@ -66,6 +72,9 @@ export const getAccessoriesData = async (): Promise<Product[]> => {
           }
           price
           productId
+          title {
+            text
+          }
         }
       }
     }
@@ -91,6 +100,9 @@ export const getShoesData = async (): Promise<Product[]> => {
           }
           price
           productId
+          title {
+            text
+          }
         }
       }
     }

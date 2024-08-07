@@ -1,5 +1,6 @@
 export interface Product {
   productId: string;
+  title: { text: string };
   productImage: {
     url: string;
   };
