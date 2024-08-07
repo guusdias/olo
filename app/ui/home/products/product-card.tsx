@@ -7,7 +7,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ products }: ProductCardProps) {
   return (
-    <div className="w-full">
+    <div className="w-full flex gap-10">
       {products.map((product) => (
         <Image
           key={product.productId}

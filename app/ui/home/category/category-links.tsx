@@ -19,6 +19,7 @@ const links = [
     href: "/home/category/pants",
   },
   { name: "Accessories", href: "/home/category/accessories" },
+  { name: "Shoes", href: "/home/category/shoes" },
 ];
 
 export default function NavLinks() {
