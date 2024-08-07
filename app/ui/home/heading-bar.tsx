@@ -17,10 +17,7 @@ export default function Header() {
           />
         </div>
         <NavLinks />
-        <button className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-slate-100 text-slate-70 p-3 text-sm font-medium  hover:bg-slate-200 hover:text-slate-800 md:flex-none md:justify-start md:p-2 md:px-3">
-          <PowerIcon className="w-6" />
-          <div className="hidden md:block">Sign Out</div>
-        </button>
+
         <div className="flex items-center space-x-4">
           <div className="relative">
             <input
