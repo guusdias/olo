@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Breadcrumbs from "@/app/ui/home/products/breadcrubs";
 import { Product } from "@/app/lib/definitions";
 
 interface ProductPageProps {
@@ -9,7 +10,19 @@ interface ProductPageProps {
 const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
   return (
     <div className="container mx-auto p-6">
-      <div className="flex flex-col md:flex-row items-center">
+      <nav className="breadcrumb mb-4">
+        <Breadcrumbs
+          breadcrumbs={[
+            { label: `Produtos`, href: "/home/products" },
+            {
+              label: `${product.title.text}`,
+              href: `/home/products/${product.title.text}`,
+              active: true,
+            },
+          ]}
+        />
+      </nav>
+      <div className="flex flex-col md:flex-row items-start">
         <div className="md:w-1/2 p-4">
           <Image
             alt={product.title.text}
@@ -20,42 +33,21 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
           />
         </div>
         <div className="md:w-1/2 p-4">
-          <h1 className="text-3xl font-bold mb-4">{product.title.text}</h1>
+          <h1 className="text-3xl font-bold mb-2">{product.title.text}</h1>
+          <p className="text-xl text-gray-700 mb-4">${product.price}</p>
           <p className="text-gray-700 mb-4">{product.description}</p>
-          <p className="text-lg font-semibold mb-4">
-            Brand: {product.brand.text}
-          </p>
-          <p className="text-lg font-semibold mb-4">
-            Age Group: {product.ageGroup.text}
-          </p>
-          <p className="text-lg font-semibold mb-4">
-            Gender: {product.gender.text}
-          </p>
-          <p className="text-2xl font-bold text-blue-600 mb-4">
-            ${product.price}
-          </p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">
-            Add to Cart
-          </button>
+          {/* <label className="block mb-2 text-gray-700">Size</label>
+          <select className="mb-4 border rounded p-2">
+            {product.productVariantSize.map((variant) => (
+              <option
+                key={variant.productSize.id}
+                value={variant.productSize.id}
+              >
+                {variant.productSize.id}
+              </option>
+            ))}
+          </select> */}
         </div>
-      </div>
-      <div className="mt-6">
-        <h2 className="text-2xl font-bold mb-4">Available Sizes</h2>
-        {/* <ul className="list-disc pl-5">
-          {product.productVariantSize.map((variant) => (
-            <li key={variant.productSize.id}>{variant.productSize.id}</li>
-          ))}
-        </ul> */}
-      </div>
-      <div className="mt-6">
-        <h2 className="text-2xl font-bold mb-4">Variants</h2>
-        {/* <ul className="list-disc pl-5">
-          {product.variants.map((variant) => (
-            <li key={variant.name}>
-              {variant.name} - {variant.color}
-            </li>
-          ))}
-        </ul> */}
       </div>
     </div>
   );

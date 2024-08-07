@@ -145,6 +145,7 @@ export const getProductById = async (productId: string): Promise<Product> => {
             name
           }
         }
+          price
       }
     }
   `;
@@ -163,7 +164,7 @@ export const getProductById = async (productId: string): Promise<Product> => {
     productId,
     title: data.page.title,
     productImage: data.page.productImage,
-    price: 0,
+    price: data.page.price,
     description: data.page.description,
     brand: data.page.brand,
     ageGroup: data.page.ageGroup,
