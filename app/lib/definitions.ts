@@ -6,6 +6,11 @@ export interface Product {
   };
   price: number;
   description: string;
+  brand: { text: string };
+  ageGroup: { text: string };
+  gender: { text: string };
+  productVariantSize: { productSize: { id: string } }[];
+  variants: { color: string; name: string }[];
 }
 
 export interface Category {

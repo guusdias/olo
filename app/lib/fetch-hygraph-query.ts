@@ -1,6 +1,9 @@
 "use server";
 
-export const fetchHygraphQuery = async (query: string) => {
+export const fetchHygraphQuery = async (
+  query: string,
+  variables?: Record<string, any>
+) => {
   try {
     const response = await fetch(process.env.HYGRAPH_URL!, {
       method: "POST",
@@ -9,7 +12,7 @@ export const fetchHygraphQuery = async (query: string) => {
         Accept: "application/json",
         Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
       next: {
         revalidate: 60 * 60 * 24,
       },
