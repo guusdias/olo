@@ -7,19 +7,19 @@ import NavLinks from "@/app/ui/home/heading-links";
 export default function Header() {
   return (
     <header className="bg-gray-100 p-4">
-      <div className=" mx-auto flex justify-evenly items-center">
+      <div className=" mx-auto flex flex-col md:flex-row justify-evenly items-center">
         <div className="flex items-center">
           <Link href={"/home"}>
             <Image
-              className="mb-4"
+              className="mr-14 "
               src="/logo.png"
               alt="logo"
               width={75}
               height={75}
             />
           </Link>
+          <NavLinks />
         </div>
-        <NavLinks />
 
         <div className="flex items-center space-x-4">
           <div className="relative">
