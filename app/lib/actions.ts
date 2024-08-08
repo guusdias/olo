@@ -216,3 +216,31 @@ export const getMaleProducts = async (): Promise<Product[]> => {
   const data = await fetchHygraphQuery(query);
   return data.masculino.page || [];
 };
+
+export const getAllProducts = async (): Promise<Product[]> => {
+  const query = `
+  query MyQuery {
+  all(where: {slug: "all"}) {
+    id
+    page {
+      id
+      price
+      productId
+      productImage {
+        url
+      }
+      title {
+        text
+      }
+      brand {
+        text
+      }
+    }
+    slug
+  }
+}
+  `;
+
+  const data = await fetchHygraphQuery(query);
+  return data.all.page || [];
+};

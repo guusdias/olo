@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { PowerIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import NavLinks from "@/app/ui/home/heading-links";
 
@@ -8,13 +9,15 @@ export default function Header() {
     <header className="bg-gray-100 p-4">
       <div className=" mx-auto flex justify-evenly items-center">
         <div className="flex items-center">
-          <Image
-            className="mb-4"
-            src="/logo.png"
-            alt="logo"
-            width={75}
-            height={75}
-          />
+          <Link href={"/home"}>
+            <Image
+              className="mb-4"
+              src="/logo.png"
+              alt="logo"
+              width={75}
+              height={75}
+            />
+          </Link>
         </div>
         <NavLinks />
 

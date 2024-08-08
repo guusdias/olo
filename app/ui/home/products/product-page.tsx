@@ -32,10 +32,12 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
             className="object-cover"
           />
         </div>
-        <div className="md:w-1/2 p-4">
+        <div className="md:w-1/2 p-4 gap-2 flex flex-col">
+          <span className="text-sm mb-5 italic">
+            {product.brand.text.toUpperCase()}
+          </span>
           <h1 className="text-3xl font-bold mb-2">{product.title.text}</h1>
           <p className="text-xl text-gray-700 mb-4">${product.price}</p>
-          <p className="text-gray-700 mb-4">{product.description}</p>
           {/* <label className="block mb-2 text-gray-700">Size</label>
           <select className="mb-4 border rounded p-2">
             {product.productVariantSize.map((variant) => (
@@ -47,6 +49,10 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
               </option>
             ))}
           </select> */}
+          <button className="bg-slate-500 text-white px-4 py-2 rounded mt-4 w-3/5 font-bold">
+            Add to Cart
+          </button>
+          <p className="text-gray-700 mt-4">{product.description}</p>
         </div>
       </div>
     </div>
