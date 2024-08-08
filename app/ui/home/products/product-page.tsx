@@ -23,7 +23,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
         />
       </nav>
       <div className="flex flex-col md:flex-row items-start">
-        <div className="md:w-1/2 p-4">
+        <div className="md:w-1/2 p-4 flex justify-center">
           <Image
             alt={product.title.text}
             src={product.productImage.url}

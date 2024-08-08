@@ -13,7 +13,7 @@ export default function ProductCard({ products }: ProductCardProps) {
       {products.map((product) => (
         <Link
           key={product.productId}
-          className="border p-4 rounded-lg flex flex-col w-80 h-96"
+          className="border p-4 rounded-lg flex flex-col w-80 h-96 justify-between"
           href={`/home/products/${product.productId}`}
         >
           <Image
@@ -26,8 +26,8 @@ export default function ProductCard({ products }: ProductCardProps) {
           <div className="items-start">
             <h2 className="text-lg font-semibold">{product.title.text}</h2>
             <p className="text-gray-700">{product.description}</p>
-            <p className="text-lg font-bold text-blue-600">${product.price}</p>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+            <p className="text-lg font-bold text-slate-600">${product.price}</p>
+            <button className="bg-slate-500 text-white px-4 py-2 rounded mt-4">
               Add to Cart
             </button>
           </div>

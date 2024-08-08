@@ -173,3 +173,46 @@ export const getProductById = async (productId: string): Promise<Product> => {
     variants: data.page.variants,
   };
 };
+
+export const getFemaleProducts = async (): Promise<Product[]> => {
+  const query = `
+  query MyQuery {
+  feminino(where: {feminino: "feminino"}) {
+    id
+    feminino
+    page {
+      productId
+      title {
+        text
+      }
+      productImage {
+        url
+      }
+      price
+    }
+  }
+}  `;
+  const data = await fetchHygraphQuery(query);
+  return data.feminino.page || [];
+};
+
+export const getMaleProducts = async (): Promise<Product[]> => {
+  const query = `
+  query MyQuery {
+  masculino(where: {masculino: "masculino"}) {
+    id
+    page {
+      productId
+      title {
+        text
+      }
+      productImage {
+        url
+      }
+      price
+    }
+  }
+} `;
+  const data = await fetchHygraphQuery(query);
+  return data.masculino.page || [];
+};
