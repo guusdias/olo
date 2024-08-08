@@ -21,7 +21,7 @@ export default function Header() {
           <NavLinks />
         </div>
 
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <div className="relative">
             <input
               type="text"
@@ -32,7 +32,7 @@ export default function Header() {
               <MagnifyingGlassIcon className="w-4 color-slate-800" />
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );

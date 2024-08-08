@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   title: "Products",
 };
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
   const allProducts = await getAllProducts();
   return (
     <div className="container mx-auto flex flex-col gap-10">

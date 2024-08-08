@@ -13,7 +13,7 @@ export default function ProductCard({ products }: ProductCardProps) {
       {products.map((product) => (
         <Link
           key={product.productId}
-          className="border p-4 rounded-lg flex flex-col w-80 h-96 justify-between self-center w-full"
+          className="border p-4 rounded-lg flex flex-col h-96 justify-between self-center w-80"
           href={`/home/products/${product.productId}`}
         >
           <Image
