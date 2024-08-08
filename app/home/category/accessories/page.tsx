@@ -1,7 +1,7 @@
 import ProductCard from "@/app/ui/home/products/product-card";
 import { getAccessoriesData } from "@/app/lib/actions";
 import { Product } from "@/app/lib/definitions";
-import ProductCardsSkeleton from "@/app/ui/home/skeleton";
+import ProductCardsSkeleton from "@/app/ui/skeleton";
 import { Suspense } from "react";
 
 export default async function Page() {

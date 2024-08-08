@@ -1,7 +1,7 @@
 import { getAllProducts } from "@/app/lib/actions";
 import ProductCard from "@/app/ui/home/products/product-card";
 import { Suspense } from "react";
-import ProductCardsSkeleton from "@/app/ui/home/skeleton";
+import ProductCardsSkeleton from "@/app/ui/skeleton";
 
 export default async function Page() {
   const allProducts = await getAllProducts();
