@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Breadcrumbs from "@/app/ui/home/products/breadcrubs";
@@ -49,7 +50,10 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
               </option>
             ))}
           </select> */}
-          <button className="bg-slate-500 text-white px-4 py-2 rounded mt-4 w-3/5 font-bold">
+          <button
+            className="bg-slate-500 text-white px-4 py-2 rounded mt-4 w-3/5 font-bold"
+            onClick={() => alert("You ain't buy if the store is fake.")}
+          >
             Add to Cart
           </button>
           <p className="text-gray-700 mt-4">{product.description}</p>
