@@ -27,7 +27,7 @@ export default function ProductCard({ products }: ProductCardProps) {
             />
           </div>
           <div className="mt-4 text-center flex flex-col items-start justify-center w-40">
-            <h2 className="text-lg font-semibold text-wrap text-start">
+            <h2 className="text-lg font-semibold text-wrap text-start capitalize">
               {product.title.text}
             </h2>
             <p className="text-gray-700 mt-1">{product.description}</p>
