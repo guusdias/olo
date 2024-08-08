@@ -2,6 +2,11 @@ import { getShirtsData, getShoesData, getPantsData } from "@/app/lib/actions";
 import ProductCard from "@/app/ui/home/products/product-card";
 import ProductCardsSkeleton from "@/app/ui/skeleton";
 import { Suspense } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Category",
+};
 
 export default async function Page() {
   const tshirts = await getShirtsData();

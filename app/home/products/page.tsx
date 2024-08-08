@@ -2,6 +2,11 @@ import { getAllProducts } from "@/app/lib/actions";
 import ProductCard from "@/app/ui/home/products/product-card";
 import { Suspense } from "react";
 import ProductCardsSkeleton from "@/app/ui/skeleton";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products",
+};
 
 export default async function Page() {
   const allProducts = await getAllProducts();

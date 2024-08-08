@@ -1,5 +1,10 @@
 import { getFemaleProducts, getMaleProducts } from "@/app/lib/actions";
 import ProductCard from "@/app/ui/home/products/product-card";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default async function Page() {
   const female = await getFemaleProducts();
