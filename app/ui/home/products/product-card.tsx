@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ products }: ProductCardProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
       {products.map((product) => (
         <Link
           key={product.productId}
@@ -25,8 +25,10 @@ export default function ProductCard({ products }: ProductCardProps) {
               className="object-contain"
             />
           </div>
-          <div className="mt-4 text-center flex flex-col items-start justify-center">
-            <h2 className="text-lg font-semibold">{product.title.text}</h2>
+          <div className="mt-4 text-center flex flex-col items-start justify-center w-40">
+            <h2 className="text-lg font-semibold text-wrap text-start">
+              {product.title.text}
+            </h2>
             <p className="text-gray-700 mt-1">{product.description}</p>
             <p className="text-lg font-bold text-slate-600 mt-2">
               ${product.price}

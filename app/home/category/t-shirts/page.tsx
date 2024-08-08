@@ -12,10 +12,13 @@ export default async function Page() {
   const product = await getShirtsData();
 
   return (
-    <div>
-      <Suspense fallback={<ProductCardsSkeleton />}>
-        <ProductCard products={product} />
-      </Suspense>
+    <div className="container mx-auto flex flex-col gap-10">
+      <section>
+        <h2 className="text-2xl font-bold mb-4">T-Shirts</h2>
+        <Suspense fallback={<ProductCardsSkeleton />}>
+          <ProductCard products={product} />
+        </Suspense>
+      </section>
     </div>
   );
 }
