@@ -4,9 +4,9 @@ const shimmer =
 export function ProductCardSkeleton() {
   return (
     <div
-      className={`${shimmer} border p-4 rounded-lg flex flex-col w-80 h-96 justify-between relative overflow-hidden bg-gray-100 shadow-sm`}
+      className={`${shimmer} relative bg-gray-100 p-2 rounded-lg flex flex-col w-80 h-96 justify-between overflow-hidden`}
     >
-      <div className="flex-1 flex flex-col justify-center items-center">
+      <div className="flex-1 flex flex-col p-4 justify-center items-center">
         <div className="w-40 h-40 bg-gray-200 mb-4"></div>
         <div className="w-3/4 h-6 bg-gray-200 mb-2"></div>
         <div className="w-1/2 h-6 bg-gray-200 mb-2"></div>
@@ -33,9 +33,6 @@ export function ProductCardsSkeleton() {
 export default function DashboardSkeleton() {
   return (
     <>
-      <div
-        className={`${shimmer} relative mb-4 h-8 w-36 overflow-hidden rounded-md bg-gray-100`}
-      />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <ProductCardSkeleton />
         <ProductCardSkeleton />
