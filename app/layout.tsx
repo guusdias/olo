@@ -14,6 +14,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <title>Olo</title>
+      <meta
+        name="description"
+        content="The right place to by the perfect clothes for you."
+      />
+      <meta property="og:title" content="Olo" />
+      <meta property="og:description" content="Clothes store." />
+      <meta property="og:image" content="./logo.png" />
+      <meta name="keywords" content="payments, invoices, money" />
+      <link rel="icon" href="./logo.png" />
       <body className={inter.className}>{children}</body>
     </html>
   );
