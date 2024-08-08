@@ -1,7 +1,7 @@
 const shimmer =
   "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
 
-export default function ProductCardSkeleton() {
+export function ProductCardSkeleton() {
   return (
     <div
       className={`${shimmer} border p-4 rounded-lg flex flex-col w-80 h-96 justify-between relative overflow-hidden bg-gray-100 shadow-sm`}
@@ -16,5 +16,16 @@ export default function ProductCardSkeleton() {
         <div className="w-3/4 h-10 bg-gray-200 rounded"></div>
       </div>
     </div>
+  );
+}
+
+export default function ProductCardsSkeleton() {
+  return (
+    <>
+      <ProductCardSkeleton />
+      <ProductCardSkeleton />
+      <ProductCardSkeleton />
+      <ProductCardSkeleton />
+    </>
   );
 }

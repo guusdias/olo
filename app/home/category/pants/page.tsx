@@ -1,6 +1,6 @@
 import ProductCard from "@/app/ui/home/products/product-card";
 import { getPantsData } from "@/app/lib/actions";
-import ProductCardSkeleton from "@/app/ui/home/skeleton";
+import ProductCardsSkeleton from "@/app/ui/home/skeleton";
 import { Suspense } from "react";
 
 export default async function Page() {
@@ -8,7 +8,7 @@ export default async function Page() {
 
   return (
     <div>
-      <Suspense fallback={<ProductCardSkeleton />}>
+      <Suspense fallback={<ProductCardsSkeleton />}>
         <ProductCard products={products} />
       </Suspense>
     </div>
