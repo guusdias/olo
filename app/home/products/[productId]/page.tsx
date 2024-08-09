@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 
 const Page = async ({ params }: ProductPageProps) => {
   const { productId } = params;
-  console.log("Product ID:", productId);
   const product: Product = await getProductById(productId);
 
   if (!productId) {

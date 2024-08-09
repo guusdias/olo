@@ -152,7 +152,9 @@ export const getProductById = async (productId: string): Promise<Product> => {
   const variables = { productId };
   const data = await fetchHygraphQuery(query, variables);
 
-  if (!data.page) throw new Error("Product not found");
+  if (!data.page) {
+    throw new Error("Product not found");
+  }
 
   return {
     productId,
