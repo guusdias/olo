@@ -47,9 +47,6 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
             <option key="M" value="M">
               M
             </option>
-            <option key="M" value="M">
-              M
-            </option>
             <option key="G" value="G">
               G
             </option>
