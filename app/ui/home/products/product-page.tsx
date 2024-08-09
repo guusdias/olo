@@ -39,17 +39,21 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
           </span>
           <h1 className="text-3xl font-bold mb-2">{product.title.text}</h1>
           <p className="text-xl text-gray-700 mb-4">${product.price}</p>
-          {/* <label className="block mb-2 text-gray-700">Size</label>
-          <select className="mb-4 border rounded p-2">
-            {product.productVariantSize.map((variant) => (
-              <option
-                key={variant.productSize.id}
-                value={variant.productSize.id}
-              >
-                {variant.productSize.id}
-              </option>
-            ))}
-          </select> */}
+          <label className="block mb-2 text-gray-700">Size</label>
+          <select className="mb-4 border rounded p-2 w-3/5 bg-slate-100">
+            <option key="P" value="P">
+              P
+            </option>
+            <option key="M" value="M">
+              M
+            </option>
+            <option key="M" value="M">
+              M
+            </option>
+            <option key="G" value="G">
+              G
+            </option>
+          </select>
           <button
             className="bg-slate-500 text-white px-4 py-2 rounded mt-4 w-3/5 font-bold"
             onClick={() => alert("You ain't buy if the store is fake.")}
