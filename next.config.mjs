@@ -8,6 +8,9 @@ const nextConfig = {
   },
   images: {
     domains: ["sa-east-1.graphassets.com"],
+  }, 
+  experimental: {
+    middleware: true,
   },
 };
 
